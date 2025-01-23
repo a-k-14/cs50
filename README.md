@@ -1,1 +1,1 @@
-###Welcome to my repo of CS50 course
+# Welcome to my repo of CS50 course

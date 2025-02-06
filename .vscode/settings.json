@@ -3,6 +3,7 @@
         "*.ejs": "html",
         "cs50.h": "c",
         "ctype.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "string.h": "c"
     }
 }

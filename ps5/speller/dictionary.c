@@ -38,12 +38,13 @@ bool check(const char *word)
     node *current = table[index];
 
     // we loop through the linked list at the index location of table array
-    while(current != NULL)
+    while (current != NULL)
     {
         if (strcasecmp(current->word, word) == 0)
         {
             return true;
-        } else
+        }
+        else
         {
             current = current->next;
         }
@@ -79,6 +80,9 @@ bool load(const char *dictionary)
 
     // Read each word in the file and store in node
     // as we have specified %s here, which is a string that ends with \0, fscanf will read till each \0
+    // we set buffer length to 46 (45 + 1)
+    // if there is any word in dictionary which is >45, fscanf will overflow
+    // since the provided dictionary does not have any words >45 as per cs50 problem descrition page, we are safe here
     while (fscanf(dict, "%s", buffer) != EOF)
     {
         // Create space for a new node
@@ -124,17 +128,16 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
 
-            // we get the 1st item in the linked list at table[i]
-            node *n = table[i];
+        // we get the 1st item in the linked list at table[i]
+        node *n = table[i];
 
-            // we loop through the linked list and free each node
-            while(n != NULL)
-            {
-                node *temp = n->next;
-                free(n);
-                n = temp;
-            }
-
+        // we loop through the linked list and free each node
+        while (n != NULL)
+        {
+            node *temp = n->next;
+            free(n);
+            n = temp;
+        }
     }
     // when the unload is successful
     return true;

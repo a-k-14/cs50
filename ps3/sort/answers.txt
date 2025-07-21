@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: When we use reversed or sorted texts, sort1 performs better, but it performs between sort2 and sort3 in other cases.
+
+sort2 uses: Merge Sort
+
+How do you know?: Sort2 is the fastest in almost all the cases except few sorted cases where sort1 is faster
+
+sort3 uses: Selection Sort
+
+How do you know?: Sort3 is the slowest of all 3, especially in the sorted cases where its O(n^2) is clearly visible
